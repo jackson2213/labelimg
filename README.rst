@@ -31,6 +31,13 @@ by `ImageNet <http://www.image-net.org/>`__.  Besides, it also supports YOLO and
 
 `Watch a demo video <https://youtu.be/p0nR2YsCY_U>`__
 
+
+change log
+------------------
+1. remove predifine class, add auto check save dir classes.txt file and load label
+2. change auto save model is true
+3. remove change save dir and set auto save label to open dir
+
 Installation
 ------------------
 
@@ -155,12 +162,7 @@ Note:
 
 - When saving as YOLO format, "difficult" flag is discarded.
 
-Create pre-defined classes
-~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-You can edit the
-`data/predefined\_classes.txt <https://github.com/tzutalin/labelImg/blob/master/data/predefined_classes.txt>`__
-to load pre-defined classes
 
 Hotkeys
 ~~~~~~~
@@ -240,4 +242,9 @@ Stargazers over time
 ~~~~~~~~~~~~~~~~~~~~
 
 .. image:: https://starchart.cc/tzutalin/labelImg.svg
+
+build
+~~~~~~~~~~~~~~~~~~~~
+pyinstaller  --hidden-import=lxml  --hidden-import=PySide6 -F -n "labelImg" -c labelImg.py -p ./libs -p
+
 
